@@ -83,3 +83,78 @@
     console.warn('Book catalog: failed to load manifest', err);
   }
 })();
+
+// Interactions: flip card in hero, modal gallery, and thumbnail preloading
+window.addEventListener('DOMContentLoaded', () => {
+  // Flip card logic (hero card)
+  document.querySelectorAll('[data-flip]').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('flipped');
+    });
+  });
+
+  // Modal gallery logic
+  const modal = document.getElementById('imageModal');
+  const modalImg = modal ? modal.querySelector('.image-modal-content') : null;
+  const modalCaption = modal ? modal.querySelector('.image-modal-caption') : null;
+  const modalCloseBtn = modal ? modal.querySelector('.image-modal-close') : null;
+
+  function openModal(src, alt) {
+    if (!modal || !modalImg) return;
+    modalImg.src = src;
+    modalImg.alt = alt || '';
+    if (modalCaption) {
+      modalCaption.textContent = alt || '';
+    }
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    if (!modal) return;
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  const thumbs = document.querySelectorAll('.gallery-thumb');
+  thumbs.forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      const fullSrc = thumb.getAttribute('data-full') || thumb.getAttribute('src');
+      openModal(fullSrc, thumb.getAttribute('alt') || '');
+    });
+  });
+
+  if (modalCloseBtn) {
+    modalCloseBtn.addEventListener('click', closeModal);
+  }
+
+  if (modal) {
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+        closeModal();
+      }
+    });
+  }
+
+  // Preload full images on hover/focus of thumbnails
+  thumbs.forEach(thumb => {
+    const fullSrc = thumb.getAttribute('data-full');
+    if (!fullSrc) return;
+
+    const preload = () => {
+      const img = new Image();
+      img.src = fullSrc;
+    };
+
+    thumb.addEventListener('mouseenter', preload, { once: true });
+    thumb.addEventListener('focus', preload, { once: true });
+  });
+});

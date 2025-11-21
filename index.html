@@ -30,17 +30,33 @@
 					</p>
 					<a class="button" href="history.html">Explore our story</a>
 				</div>
-				<div class="card">
-					<div class="badge">Signature Blend</div>
-					<h3>Matcha-forward collections</h3>
-					<p>
-						From Kyoto-sourced matcha to hojicha accents, every piece balances
-						French savoir-faire with Japanese precision.
-					</p>
-					<p>
-						Premium cacao, yuzu, Madagascan vanilla, and seasonal sakura inspire
-						limited releases crafted for connoisseurs.
-					</p>
+				<div class="card flip-card" data-flip>
+					<div class="flip-card-inner">
+						<div class="flip-card-front">
+							<div class="badge">Signature Blend</div>
+							<h3>Matcha-forward collections</h3>
+							<p>
+								From Kyoto-sourced matcha to hojicha accents, every piece balances
+								French savoir-faire with Japanese precision.
+							</p>
+							<p>
+								Premium cacao, yuzu, Madagascan vanilla, and seasonal sakura inspire
+								limited releases crafted for connoisseurs.
+							</p>
+						</div>
+						<div class="flip-card-back">
+							<div class="badge">Craft</div>
+							<h3>Hand-tempered in Paris</h3>
+							<p>
+								Each collection is hand-tempered in our Saint-Germain atelier, where
+								matcha, hojicha, and single-origin cacao are layered with precision.
+							</p>
+							<p>
+								Discover seasonal tastings, limited-edition boxes, and bespoke
+								pairings designed for true connoisseurs.
+							</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -57,6 +73,9 @@
 			</div>
 			<div class="book-pagination">Page <span id="book-page">1</span> / <span id="book-pages">1</span></div>
 			<div class="book-thumbs" id="book-thumbs" aria-hidden="false"></div>
+			<div style="text-align:center;margin-top:8px;">
+				<button id="open-thumbs-modal" class="button" aria-haspopup="dialog">Voir toutes les vignettes</button>
+			</div>
 		</section>
 
 
@@ -102,12 +121,18 @@
 
 		<div class="section-title">Signature gallery</div>
 		<div class="gallery">
-			<img src="assets/images/hero-banner.jpg" alt="Hero chocolate presentation" />
-			<img src="assets/images/gallery-tasting.jpg" alt="Tasting experience" />
-			<img src="assets/images/gallery-matcha.jpg" alt="Matcha chocolate" />
-			<img src="assets/images/gallery-packaging.jpg" alt="Packaging design" />
-			<img src="assets/images/gallery-luxury.jpg" alt="Luxury display" />
-			<img src="assets/images/gallery-atelier.jpg" alt="Atelier craftsmanship" />
+			<img class="gallery-thumb" src="assets/images/hero-banner.jpg" alt="Hero chocolate presentation" loading="lazy" data-full="assets/images/hero-banner.jpg" />
+			<img class="gallery-thumb" src="assets/images/gallery-tasting.jpg" alt="Tasting experience" loading="lazy" data-full="assets/images/gallery-tasting.jpg" />
+			<img class="gallery-thumb" src="assets/images/gallery-matcha.jpg" alt="Matcha chocolate" loading="lazy" data-full="assets/images/gallery-matcha.jpg" />
+			<img class="gallery-thumb" src="assets/images/gallery-packaging.jpg" alt="Packaging design" loading="lazy" data-full="assets/images/gallery-packaging.jpg" />
+			<img class="gallery-thumb" src="assets/images/gallery-luxury.jpg" alt="Luxury display" loading="lazy" data-full="assets/images/gallery-luxury.jpg" />
+			<img class="gallery-thumb" src="assets/images/gallery-atelier.jpg" alt="Atelier craftsmanship" loading="lazy" data-full="assets/images/gallery-atelier.jpg" />
+		</div>
+
+		<div class="image-modal" id="imageModal" aria-hidden="true" role="dialog" aria-label="Image en plein écran">
+			<button class="image-modal-close" type="button" aria-label="Fermer">&times;</button>
+			<img class="image-modal-content" alt="" />
+			<div class="image-modal-caption"></div>
 		</div>
 
 		<div class="section-title">Watch behind the scenes</div>
