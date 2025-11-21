@@ -1,168 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Accueil | Kōbō Chocolate</title>
-		<link rel="stylesheet" href="assets/css/styles.css" />
-	</head>
-	<body>
-		<header>
-			<div class="navbar">
-				<div class="brand">KŌBŌ</div>
-				<nav>
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="history.html">Our Story</a></li>
-					</ul>
-				</nav>
-			</div>
-		</header>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kōbō Chocolate — Accueil</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="brand">KŌBŌ</div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="history.html">Notre histoire</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-		<section class="hero">
-			<div class="hero-inner">
-				<div>
-					<h1>The Art of Chocolate</h1>
-					<p>
-						Step inside Kōbō, where Franco-Japanese elegance meets modern
-						chocolaterie. Discover a sensorial journey defined by matcha,
-						hojicha, and meticulous craftsmanship.
-					</p>
-					<a class="button" href="history.html">Explore our story</a>
-				</div>
-				<div class="card flip-card" data-flip>
-					<div class="flip-card-inner">
-						<div class="flip-card-front">
-							<div class="badge">Signature Blend</div>
-							<h3>Matcha-forward collections</h3>
-							<p>
-								From Kyoto-sourced matcha to hojicha accents, every piece balances
-								French savoir-faire with Japanese precision.
-							</p>
-							<p>
-								Premium cacao, yuzu, Madagascan vanilla, and seasonal sakura inspire
-								limited releases crafted for connoisseurs.
-							</p>
-						</div>
-						<div class="flip-card-back">
-							<div class="badge">Craft</div>
-							<h3>Hand-tempered in Paris</h3>
-							<p>
-								Each collection is hand-tempered in our Saint-Germain atelier, where
-								matcha, hojicha, and single-origin cacao are layered with precision.
-							</p>
-							<p>
-								Discover seasonal tastings, limited-edition boxes, and bespoke
-								pairings designed for true connoisseurs.
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+    <section class="hero minimal">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Maison fondée en 1996</p>
+          <h1>Une page épurée pour mettre en avant votre vidéo</h1>
+          <p>
+            Nous avons gardé l'essentiel : un univers immersif, un espace clair pour vos contenus et un carnet animé qui raconte la
+            Maison. Ajoutez simplement votre vidéo et faites tourner les pages.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#video">Placer ma vidéo</a>
+            <a class="button ghost" href="#carnet">Ouvrir le carnet</a>
+          </div>
+        </div>
+        <div class="video-placeholder" id="video">
+          <div class="video-frame">
+            <span class="video-pill">Espace vidéo</span>
+            <h3>Votre vidéo ici</h3>
+            <p>Intégrez un embed (YouTube, Vimeo…) ou un mp4 self-hosted dans ce cadre, sans rien casser du design.</p>
+            <button class="button ghost" type="button">Glisser votre lecteur</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
-		<section class="section" id="catalogue">
-			<div class="section-title">Catalogue — Ouvrir le livre</div>
-			<div class="book" role="region" aria-label="Catalogue">
-				<button class="book-control prev" aria-label="Page précédente">‹</button>
-				<div class="book-shelf">
-					<div class="page left"><img src="assets/images/hero-banner.jpg" alt="Page image" /></div>
-					<div class="page right"><img src="assets/images/gallery-tasting.jpg" alt="Page image" /></div>
-				</div>
-				<button class="book-control next" aria-label="Page suivante">›</button>
-			</div>
-			<div class="book-pagination">Page <span id="book-page">1</span> / <span id="book-pages">1</span></div>
-			<div class="book-thumbs" id="book-thumbs" aria-hidden="false"></div>
-			<div style="text-align:center;margin-top:8px;">
-				<button id="open-thumbs-modal" class="button" aria-haspopup="dialog">Voir toutes les vignettes</button>
-			</div>
-		</section>
+    <section class="section" id="carnet">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Carnet vivant</p>
+          <h2>Un livre animé pour mêler images et repères clés</h2>
+          <p class="muted">
+            Faites défiler pour découvrir les temps forts : chaque page combine une note courte et une image, avec une animation de
+            feuilletage.
+          </p>
+        </div>
+        <div class="section-actions">
+          <button class="book-control prev" aria-label="Page précédente">‹</button>
+          <button class="book-control next" aria-label="Page suivante">›</button>
+        </div>
+      </div>
 
+      <div class="book-shell" data-book>
+        <div class="book">
+          <div class="page left">
+            <div class="page-inner">
+              <p class="page-meta"></p>
+              <h3 class="page-title"></h3>
+              <p class="page-text"></p>
+            </div>
+          </div>
+          <div class="page right">
+            <div class="page-inner">
+              <p class="page-meta"></p>
+              <h3 class="page-title"></h3>
+              <p class="page-text"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="book-pagination">Page <span id="book-page">1</span> / <span id="book-pages">1</span></div>
+      <div class="book-thumbs" id="book-thumbs" aria-hidden="false"></div>
+    </section>
 
-		<div class="section-title">Highlights from our journey</div>
-		<div class="card-grid">
-			<div class="card">
-				<div class="badge">Origins</div>
-				<h3>Saint-Germain atelier</h3>
-				<p>
-					Founded in 1996 by chef Antoine Hirashi, Kōbō was born from childhood
-					afternoons spent pairing matcha tea with delicate sweets. That memory
-					became the blueprint for a Franco-Japanese chocolate house.
-				</p>
-			</div>
-			<div class="card">
-				<div class="badge">Reputation</div>
-				<h3>Luxury hospitality</h3>
-				<p>
-					Early collaborations with Parisian grand hotels set the tone: refined
-					collections, discrete service, and bespoke creations for couture and
-					haute gastronomy partners worldwide.
-				</p>
-			</div>
-			<div class="card">
-				<div class="badge">Sourcing</div>
-				<h3>Exceptional ingredients</h3>
-				<p>
-					Rare matcha from Kyoto and Uji, single-origin cacao, Manuka honey,
-					saffron, and yuzu anchor our supply chain—paired with eco-conscious,
-					customizable packaging.
-				</p>
-			</div>
-			<div class="card">
-				<div class="badge">Culture</div>
-				<h3>Human-centered craft</h3>
-				<p>
-					A participative, exacting culture values artisan training, calm
-					workspaces, intercultural teams, and immersive tastings that connect
-					people to the artistry behind each piece.
-				</p>
-			</div>
-		</div>
+    <section class="section essentials">
+      <div class="section-heading compact">
+        <div>
+          <p class="eyebrow">L'essentiel</p>
+          <h2>Trois repères pour guider vos visiteurs</h2>
+        </div>
+      </div>
+      <div class="card-grid minimal">
+        <div class="card">
+          <div class="badge">Signature</div>
+          <h3>Matcha & savoir-faire</h3>
+          <p>Assemblage de cacao et de thés japonais, imaginé à Saint-Germain et affiné par des artisans formés en interne.</p>
+        </div>
+        <div class="card">
+          <div class="badge">Expérience</div>
+          <h3>Dégustations immersives</h3>
+          <p>Formats privés ou en salon, avec rituels d'infusion, accords thé-cacao et cartes sensorielles.</p>
+        </div>
+        <div class="card">
+          <div class="badge">Responsable</div>
+          <h3>Raretés sourcées avec soin</h3>
+          <p>Cacaos premium, matcha de Kyoto, vanille de Madagascar : la traçabilité guide chaque édition limitée.</p>
+        </div>
+      </div>
+    </section>
 
-		<div class="section-title">Signature gallery</div>
-		<div class="gallery">
-			<img class="gallery-thumb" src="assets/images/hero-banner.jpg" alt="Hero chocolate presentation" loading="lazy" data-full="assets/images/hero-banner.jpg" />
-			<img class="gallery-thumb" src="assets/images/gallery-tasting.jpg" alt="Tasting experience" loading="lazy" data-full="assets/images/gallery-tasting.jpg" />
-			<img class="gallery-thumb" src="assets/images/gallery-matcha.jpg" alt="Matcha chocolate" loading="lazy" data-full="assets/images/gallery-matcha.jpg" />
-			<img class="gallery-thumb" src="assets/images/gallery-packaging.jpg" alt="Packaging design" loading="lazy" data-full="assets/images/gallery-packaging.jpg" />
-			<img class="gallery-thumb" src="assets/images/gallery-luxury.jpg" alt="Luxury display" loading="lazy" data-full="assets/images/gallery-luxury.jpg" />
-			<img class="gallery-thumb" src="assets/images/gallery-atelier.jpg" alt="Atelier craftsmanship" loading="lazy" data-full="assets/images/gallery-atelier.jpg" />
-		</div>
+    <footer class="footer">
+      © 2025 Kōbō Chocolate — Héritage Paris · Kyoto
+    </footer>
 
-		<div class="image-modal" id="imageModal" aria-hidden="true" role="dialog" aria-label="Image en plein écran">
-			<button class="image-modal-close" type="button" aria-label="Fermer">&times;</button>
-			<img class="image-modal-content" alt="" />
-			<div class="image-modal-caption"></div>
-		</div>
-
-		<div class="section-title">Watch behind the scenes</div>
-		<div class="section">
-			<div class="split">
-				<div>
-					<p>
-						Witness the balance of French technique and Japanese minimalism that
-						defines our atelier. From precision tempering to matcha infusion,
-						every step honors the ingredients.
-					</p>
-					<p>
-						Experience more history, sourcing, and collaborations on our story
-						page.
-					</p>
-					<a class="button" href="history.html">View full timeline</a>
-				</div>
-				<div>
-					<iframe
-						src="https://www.youtube.com/embed/kwF0P5RC28Q"
-						title="Kōbō atelier"
-						allowfullscreen
-					></iframe>
-				</div>
-			</div>
-		</div>
-
-		<footer class="footer">
-			© 2025 Kōbō Chocolate — Crafted between Paris and Kyoto.
-		</footer>
-		<script src="assets/js/book.js" defer></script>
-	</body>
-	</html>
+    <script src="assets/js/book.js" defer></script>
+  </body>
+</html>
