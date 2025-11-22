@@ -492,6 +492,7 @@ nav a {
   transform: translateX(0);
   opacity: 0.65;
   transition: opacity 0.25s ease, transform 0.3s ease;
+  color: #000;
 }
 
 .timeline-card.active {
@@ -508,6 +509,12 @@ nav a {
 
 .timeline-body {
   padding: 16px;
+}
+
+.timeline-body p,
+.timeline-body h3,
+.timeline-card .muted {
+  color: #000;
 }
 
 .timeline-controls {
