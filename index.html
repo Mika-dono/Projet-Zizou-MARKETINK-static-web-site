@@ -3,115 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aurelia Oliva — Accueil</title>
+    <title>Aurelia Oliva - Video YouTube</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
-  <body>
+  <body class="video-home">
     <header>
       <div class="navbar">
         <div class="brand">Aurelia Oliva</div>
         <nav>
           <ul>
-            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html">Video</a></li>
             <li><a href="history.html">Notre histoire</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <section class="hero minimal">
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <p class="eyebrow">Maison fondée en 1996</p>
-          <h1>Une page épurée pour mettre en avant votre vidéo</h1>
-          <p>
-            Nous avons gardé l'essentiel : un univers immersif, un espace clair pour vos contenus et un carnet animé qui raconte la
-            Maison. Ajoutez simplement votre vidéo et faites tourner les pages.
-          </p>
-          <div class="hero-actions">
-            <a class="button" href="#video">Placer ma vidéo</a>
-            <a class="button ghost" href="#carnet">Ouvrir le carnet</a>
-          </div>
-        </div>
-        <div class="video-placeholder" id="video">
-          <div class="video-frame">
-            <span class="video-pill">Espace vidéo</span>
-            <h3>Votre vidéo ici</h3>
-            <p>Intégrez un embed (YouTube, Vimeo…) ou un mp4 self-hosted dans ce cadre, sans rien casser du design.</p>
-            <button class="button ghost" type="button">Glisser votre lecteur</button>
-          </div>
-        </div>
-      </div>
-    </section>
+    <main class="video-landing">
+      <div class="video-card">
+        <p class="eyebrow">Espace video</p>
+        <h1>Collez votre video YouTube</h1>
+        <p class="muted">
+          Remplacez le lien d'exemple ou copiez l'iframe fournie par YouTube dans le cadre ci-dessous.
+        </p>
 
-    <section class="section" id="carnet">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Carnet vivant</p>
-          <h2>Un livre animé pour mêler images et repères clés</h2>
-          <p class="muted">
-            Faites défiler pour découvrir les temps forts : chaque page combine une note courte et une image, avec une animation de
-            feuilletage.
-          </p>
-        </div>
-        <div class="section-actions">
-          <button class="book-control prev" aria-label="Page précédente">‹</button>
-          <button class="book-control next" aria-label="Page suivante">›</button>
-        </div>
-      </div>
-
-      <div class="book-shell" data-book>
-        <div class="book">
-          <div class="page left">
-            <div class="page-inner">
-              <p class="page-meta"></p>
-              <h3 class="page-title"></h3>
-              <p class="page-text"></p>
-            </div>
-          </div>
-          <div class="page right">
-            <div class="page-inner">
-              <p class="page-meta"></p>
-              <h3 class="page-title"></h3>
-              <p class="page-text"></p>
-            </div>
+        <div class="embed-wrapper">
+          <div class="embed-frame">
+            <!-- Remplacez VIDEO_ID par l'identifiant de votre video YouTube -->
+            <iframe
+              id="youtube-embed"
+              src="https://www.youtube.com/embed/VIDEO_ID?rel=0&modestbranding=1"
+              title="Lecteur YouTube"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
           </div>
         </div>
-      </div>
-      <div class="book-pagination">Page <span id="book-page">1</span> / <span id="book-pages">1</span></div>
-      <div class="book-thumbs" id="book-thumbs" aria-hidden="false"></div>
-    </section>
 
-    <section class="section essentials">
-      <div class="section-heading compact">
-        <div>
-          <p class="eyebrow">L'essentiel</p>
-          <h2>Trois repères pour guider vos visiteurs</h2>
+        <p class="video-note">
+          Changez <code>VIDEO_ID</code> dans l'URL ci-dessus ou collez ici votre iframe YouTube complet.
+        </p>
+
+        <div class="video-actions">
+          <a class="button" href="https://www.youtube.com" target="_blank" rel="noreferrer">Ouvrir YouTube</a>
+          <a class="button ghost" href="history.html">Lire notre histoire</a>
         </div>
       </div>
-      <div class="card-grid minimal">
-        <div class="card">
-          <div class="badge">Signature</div>
-          <h3>Matcha & savoir-faire</h3>
-          <p>Assemblage de cacao et de thés japonais, imaginé à Saint-Germain et affiné par des artisans formés en interne.</p>
-        </div>
-        <div class="card">
-          <div class="badge">Expérience</div>
-          <h3>Dégustations immersives</h3>
-          <p>Formats privés ou en salon, avec rituels d'infusion, accords thé-cacao et cartes sensorielles.</p>
-        </div>
-        <div class="card">
-          <div class="badge">Responsable</div>
-          <h3>Raretés sourcées avec soin</h3>
-          <p>Cacaos premium, matcha de Kyoto, vanille de Madagascar : la traçabilité guide chaque édition limitée.</p>
-        </div>
-      </div>
-    </section>
+    </main>
 
     <footer class="footer">
-      © 2025 Aurelia Oliva — Héritage ZIZOU · Tunisia
+      Copyright 2025 Aurelia Oliva - Heritage ZIZOU - Tunisia
     </footer>
-
-    <script src="assets/js/book.js" defer></script>
   </body>
 </html>
